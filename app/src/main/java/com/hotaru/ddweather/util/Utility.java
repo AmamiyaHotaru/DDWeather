@@ -19,7 +19,7 @@ public class Utility {
             try {
                 JSONArray allProvince =new JSONArray(response);
                 for (int i =0;i<allProvince.length();i++){
-                    JSONObject provinceObject =allProvince.getJSONObject(1);
+                    JSONObject provinceObject =allProvince.getJSONObject(i);
                     Province province=new Province();
                     province.setProvinceName(provinceObject.getString("name"));
                     province.setProvinceCode(provinceObject.getInt("id"));
@@ -40,7 +40,7 @@ public class Utility {
         if (!TextUtils.isEmpty(response)){
             try {
                 JSONArray allCities = new JSONArray(response);
-                for(int i=2;i<allCities.length();i++){
+                for(int i=0;i<allCities.length();i++){
                     JSONObject cityObject=allCities.getJSONObject(i);
                     City city=new City();
                     city.setCityName(cityObject.getString("name"));
@@ -63,7 +63,7 @@ public class Utility {
         if(!TextUtils.isEmpty(response)){
             try {
                 JSONArray allCounties=new JSONArray(response);
-                for (int i=1;i<allCounties.length();i++){
+                for (int i=0;i<allCounties.length();i++){
                     JSONObject countyObject=allCounties.getJSONObject(i);
                     County county=new County();
                     county.setCountyName(countyObject.getString("name"));
